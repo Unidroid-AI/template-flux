@@ -1,4 +1,4 @@
-# unidroid-template-flux
+# template-flux
 
 Submission template for the `flux` brain (FLUX 3 Action world action model). It is not tied to a task: it serves any FLUX 3 Action package. The reference code loads the released `black-forest-labs/flux-3-action-droid` package. Copy your trained weights into `weights/` and submit.
 
