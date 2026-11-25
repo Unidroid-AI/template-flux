@@ -3,13 +3,13 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-"""FLUX 3 Action DROID brain for the Franka tabletop task.
+"""FLUX 3 Action DROID brain reference implementation.
 
 ``weights/policy`` is the released ``black-forest-labs/flux-3-action-droid`` package.
 ``weights/video_vae.safetensors`` and ``weights/text_encoder`` are the shared frozen
 encoders it references, stored locally because the brain runs offline. The flux-action
 runtime lives in the brain image. The policy reads the left exterior, right exterior, and wrist cameras, the
-seven arm joints, and the gripper, then returns this task's 8-D absolute joint command.
+seven arm joints, and the gripper, then returns an 8-D absolute joint command.
 """
 
 from __future__ import annotations

@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: BSD-3-Clause
 
-"""Map tabletop observations to FLUX 3 Action DROID views and back to a joint command chunk."""
+"""Map observations to FLUX 3 Action DROID views and back to a joint command chunk."""
 
 from __future__ import annotations
 

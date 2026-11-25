@@ -1,6 +1,6 @@
 # unidroid-template-flux
 
-Submission template for the `flux` brain on the Franka tabletop task. It runs the released `black-forest-labs/flux-3-action-droid` package. Copy your trained weights into `weights/` and submit.
+Submission template for the `flux` brain (FLUX 3 Action world action model). It is not tied to a task: it serves any FLUX 3 Action package. The reference code loads the released `black-forest-labs/flux-3-action-droid` package. Copy your trained weights into `weights/` and submit.
 
 ## Quickstart
 
@@ -38,7 +38,7 @@ Everything except the file layout that `udcli submission check` enforces.
 
 `agent.yaml` sets `policy_config` to `flux3_action_droid`, the root BF16 package (`flux_subfolder` empty), and horizon 16.
 
-The policy reads the tabletop left exterior, right exterior, and wrist cameras, plus the arm joints and the gripper. FLUX 3 Action wants three 360x640 views, so `brain/adapt.py` resizes all three. The policy returns 32 absolute joint targets and a gripper closed fraction. The brain keeps 16 of them. The first chunk starts at row 0. Every later chunk starts at `action_offset`, because that call is answered from an observation taken half a chunk earlier. Each command is then limited to the Franka joint range and to one drive step from the measured pose, so a distant target cannot slam the arm through the table. Loading the checkpoint requires the flux-action runtime from the `flux3-action-v0` brain image.
+The reference policy reads a left exterior, right exterior, and wrist camera, plus the arm joints and the gripper. FLUX 3 Action wants three 360x640 views, so `brain/adapt.py` resizes all three. The policy returns 32 absolute joint targets and a gripper closed fraction. The brain keeps 16 of them. The first chunk starts at row 0. Every later chunk starts at `action_offset`, because that call is answered from an observation taken half a chunk earlier. Each command is then limited to the robot's joint range and to one drive step from the measured pose, so a distant target cannot slam the arm. The joint limits and velocities in `brain/adapt.py` are for a Franka arm; replace them for another robot. Loading the checkpoint requires the flux-action runtime from the `flux3-action-v0` brain image.
 
 Settings in `agent.yaml`:
 
