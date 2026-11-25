@@ -1,0 +1,19 @@
+# Python
+**/__pycache__/
+**/*.py[cod]
+**/*.egg-info/
+**/.pytest_cache/
+**/.mypy_cache/
+**/.ruff_cache/
+
+# OS and editors
+.DS_Store
+Thumbs.db
+**/.idea/
+**/.vscode/
+*.swp
+
+# FLUX 3 Action checkpoint and shared encoders. Download into weights/; see README.md.
+weights/policy/
+weights/text_encoder/
+weights/video_vae.safetensors

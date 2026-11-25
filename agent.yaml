@@ -1,0 +1,13 @@
+entry: policy:Flux3DroidBrain
+horizon: 16
+action_dim: 8
+policy_config: flux3_action_droid
+flux_subfolder: ""
+action_offset: 8
+second_exterior: camera
+offload_text_encoder: true
+compile: false
+max_gpu_mem_gb: 32
+parent_submission: null
+weights:
+  # left empty here; filled on the GPU host by nepher_cli.tournament.custody.hash_weights
